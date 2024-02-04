@@ -6,9 +6,10 @@ import io.cucumber.java.en.Then;
 import pages.HomePage;
 
 
-public class HomePageStep extends Hooks{
+public class HomePageStep {
 
     private HomePage homePage = new HomePage();
+
 
     @Given("that I navigate to T-Mobile homepage")
     public void navigateToHomePage() {
@@ -17,14 +18,12 @@ public class HomePageStep extends Hooks{
 
     @And("I accept cookies button")
     public void acceptCookiesButton() {
-
         homePage.acceptCookies();
     }
 
     @Then("I should see T-Mobile homepage")
     public void homePageIsVisible() {
         homePage.userIsOnHomePage();
-        log.info("User is on T-Mobile homepage");
     }
 
     @Then("I should see T-Mobile homepage with cart updated with <int> product")

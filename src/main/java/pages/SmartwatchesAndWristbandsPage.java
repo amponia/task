@@ -2,18 +2,20 @@ package pages;
 
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-public class SmartwatchesAndWristbandsPage extends HomePage {
+public class SmartwatchesAndWristbandsPage {
 
+    private WebDriver driver = new ChromeDriver();
 
     @FindBy(xpath = "//h1[contains(text(),'Urządzenia')]")
     private WebElement devicesHeader;
@@ -30,6 +32,7 @@ public class SmartwatchesAndWristbandsPage extends HomePage {
     private static String productNameText;
 
     private String mainContent = "//section[@class='mainContent']";
+
 
     public void usersShouldSeeProductsDisplayed() {
         Assertions.assertTrue(devicesHeader.isDisplayed());

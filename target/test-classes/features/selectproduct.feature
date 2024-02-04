@@ -10,8 +10,6 @@ Feature: Select product and add to cart
     Given I select No subscription from Smartwatches and writsbands submenu
     Then I should see devices displayed
     Given I select first item from the displayed menu
-
-    //TODO
     Then I should see the selected item details
     Given I add item to cart
     Then cart page should be displayed
